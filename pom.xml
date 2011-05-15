@@ -146,10 +146,4 @@
             <version>2.5</version>
         </dependency>
     </dependencies>
-    <!--
-        [group: 'org.hibernate', name: 'hibernate-core', version: "$hibernateVersion"],
-        [group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.0.Final'],
-        [group: 'javax.mail', name: 'mail', version: '1.4.4'],
-        [group: 'javax.servlet', name: 'servlet-api', version: '2.5']
-        -->
 </project>
