@@ -4,33 +4,33 @@ Includes Localised ReCaptcha, velocity together with tiles, BCrypt etc.
 To use apache tiles together with apache velocity in spring project, add this to your ...-servlet.xml
 
 <pre>
-<!-- velocity + tiles initializer -->
-<bean id="velocityTilesInitializer" class="sk.openhouse.web.VelocityTilesInitializer">
-    <property name="veolocityToolbox" value="/WEB-INF/classes/velocity/tools.xml" />
-    <property name="veolocityProperties" value="/WEB-INF/classes/velocity/velocity.properties" />
-    <property name="definitions">
-        <list>
-            <value>/WEB-INF/views/main-tiles.xml</value>
-        </list>
-    </property>
-</bean>
+&lt;!-- velocity + tiles initializer --&gt;
+&lt;bean id="velocityTilesInitializer" class="sk.openhouse.web.VelocityTilesInitializer"&gt;
+    &lt;property name="veolocityToolbox" value="/WEB-INF/classes/velocity/tools.xml" /&gt;
+    &lt;property name="veolocityProperties" value="/WEB-INF/classes/velocity/velocity.properties" /&gt;
+    &lt;property name="definitions"&gt;
+        &lt;list&gt;
+            &lt;value&gt;/WEB-INF/views/main-tiles.xml&lt;/value&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
 
-<!-- tiles config with velocityTiles initializer -->
-<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-    <property name="tilesInitializer" ref="velocityTilesInitializer" />
-</bean>
+&lt;!-- tiles config with velocityTiles initializer --&gt;
+&lt;bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"&gt;
+    &lt;property name="tilesInitializer" ref="velocityTilesInitializer" /&gt;
+&lt;/bean&gt;
 
-<!-- tiles view -->
-<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-    <property name="viewClass" value="sk.openhouse.web.VelocityTilesView" />
-    <property name="contentType" value="text/html;charset=UTF-8" />
-    <!-- default attributes for every view -->
-    <property name="attributesMap">
-        <map>
-            <entry key="authentication" value-ref="authenticationService" />
-        </map>
-    </property>
-</bean>
+&lt;!-- tiles view --&gt;
+&lt;bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"&gt;
+    &lt;property name="viewClass" value="sk.openhouse.web.VelocityTilesView" /&gt;
+    &lt;property name="contentType" value="text/html;charset=UTF-8" /&gt;
+    &lt;!-- default attributes for every view --&gt;
+    &lt;property name="attributesMap"&gt;
+        &lt;map&gt;
+            &lt;entry key="authentication" value-ref="authenticationService" /&gt;
+        &lt;/map&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
 </pre>
 
 To use localised recaptcha, register ReCaptchaService and call its methods.
