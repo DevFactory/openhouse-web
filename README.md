@@ -1,7 +1,10 @@
 Helper classes to be used with spring framework and spring security.
 Includes Localised ReCaptcha, velocity together with tiles, BCrypt etc.
 
-To use apache tiles together with apache velocity in spring project, add this to your ...-servlet.xml
+To use apache tiles together with apache velocity in spring project, use archetype simple-web:
+http://github.com/pete911/spring-simple-web
+
+or add this to your ...-servlet.xml
 
 <pre>
 &lt;!-- velocity + tiles initializer --&gt;
